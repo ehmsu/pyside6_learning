@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
-from more_qml_practice import QML
+# from more_qml_practice import QML
 
 
 # QML = """
@@ -40,12 +40,13 @@ from more_qml_practice import QML
 # """
 
 if __name__ == "__main__":
-    # app = QGuiApplication(sys.argv)
-    # engine = QQmlApplicationEngine()
-    # engine.loadData(QML.encode('utf-8'))
-    # if not engine.rootObjects(): 
-    #     sys.exit(-1) 
-    # exit_code = app.exec()
-    # del engine 
-    # sys.exit(exit_code)
+    app = QGuiApplication(sys.argv)
+    engine = QQmlApplicationEngine()
+    qml_file = r"/Users/user/Documents/Programs/pysides6/more_qml_practice.qml"
+    engine.loadData(qml_file.encode('utf-8'))
+    if not engine.rootObjects(): 
+        sys.exit(-1) 
+    exit_code = app.exec()
+    del engine 
+    sys.exit(exit_code)
     # print(QML.encode('utf-8'))
